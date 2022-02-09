@@ -1,0 +1,14 @@
+
+<div class="my-5" *ngFor="let data of dataArr; let i=index">
+    <div class="dropdown show">
+        <a appShowMenu class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{data.name}}
+        </a>
+      
+        <div  class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Action_{{i}}</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+</div>
