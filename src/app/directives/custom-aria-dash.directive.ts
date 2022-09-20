@@ -16,24 +16,21 @@ export class CustomAriaDashDirective implements OnInit,AfterViewInit{
  
 
   ngOnInit(){
-    // console.log(this.appCustomAriaForDash);
   }
-  ngAfterViewInit() {    
-    console.log(this.appCustomAriaForDash);
-    
+  ngAfterViewInit() {            
     const customAria = this.appCustomAriaForDash || 'no value'
-    const originalValue = this.el.nativeElement.innerText;
+    const originalValue = this.el.nativeElement.textContent;
     console.log(originalValue);
     if (originalValue == 'mdash') {
-      this.renderer.setProperty(this.el.nativeElement, 'innerText', '');
+      this.renderer.setProperty(this.el.nativeElement, 'textContent', '');
 
       const span1 = this.renderer.createElement('span');
       const span2 = this.renderer.createElement('span');
 
-      this.renderer.setProperty(span1, 'innerText', customAria);
+      this.renderer.setProperty(span1, 'textContent', customAria);
       this.renderer.setAttribute(span1, 'class', 'visually-hidden');
 
-      this.renderer.setProperty(span2, 'innerText', originalValue);
+      this.renderer.setProperty(span2, 'textContent', originalValue);
       // this.renderer.setProperty(span2, 'aria-hidden', true);
       this.renderer.setAttribute(span2,'aria-hidden','true')
 

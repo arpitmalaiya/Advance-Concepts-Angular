@@ -7,6 +7,8 @@ import { CustomAriaComponent } from './custom-aria/custom-aria.component';
 import { ButtonDropdownComponent } from './button-dropdown/button-dropdown.component';
 import { CustomAriaDashDirective } from './directives/custom-aria-dash.directive';
 import { ShowMenuDirective } from './directives/show-menu.directive';
+import { CustomCurrencyPipe } from './custom-currency/custom-currency.pipe';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,14 @@ import { ShowMenuDirective } from './directives/show-menu.directive';
     CustomAriaComponent,
     ButtonDropdownComponent,
     CustomAriaDashDirective,
-    ShowMenuDirective
+    ShowMenuDirective,
+    CustomCurrencyPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
